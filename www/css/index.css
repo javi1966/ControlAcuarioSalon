@@ -1,0 +1,253 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+
+@font-face {
+    font-family: 'bpdotsregular';
+    src: url('../fonts/bpdots-webfont.eot');
+    src: url('../fonts/bpdots-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/bpdots-webfont.woff2') format('woff2'),
+        url('../fonts/bpdots-webfont.woff') format('woff'),
+        url('../fonts/bpdots-webfont.ttf') format('truetype'),
+        url('../fonts/bpdots-webfont.svg#bpdotsregular') format('svg');
+    font-family: font7segmentos;
+    src: url('../fonts/DSEG7Classic-BoldItalic.woff');
+    font-weight: bold;
+    font-style: normal;
+    
+
+}
+
+
+.ui-body-e {
+    background-color:#303030; /*#fbef7e !important;*/
+    
+}
+
+.ui-header-fixed {
+    color:whitesmoke !important;
+    font-family: bold !important;
+    letter-spacing: 3px !important; 
+   /* background: linear-gradient(blue,lightblue) !important;
+    background: -webkit-linear-gradient(blue,lightblue) !important;*/
+    background-color:black !important;
+    -webkit-text-shadow: 0px 0px 15px white !important;
+    text-shadow:-0px 0px 9px white !important;
+    font-size :0.9em !important;
+    border-top-color:orange !important; 
+    border-top-width: 2px !important;
+    border-bottom-color:orange !important; 
+    border-bottom-width: 2px !important;
+    box-shadow: inset 0px 0px 25px 5px orange!important;
+    border-top: 0em;
+    
+}
+
+.ui-header-fixed a{
+    background: linear-gradient(blue,lightblue); 
+    border:0;
+    padding-right: 8px;
+    padding-top: 30px;
+   
+}
+
+.ui-header-fixed h1 {
+    -webkit-text-shadow: 0px 0px 25px white !important;
+    text-shadow:0px 0px 19px white !important;
+    
+}
+
+#btnCerrar {
+
+  background-color:black;
+
+}
+
+.ui-content {
+
+    margin : 0px;
+    padding: 0px;
+    position : absolute !important; 
+    top : 0px !important;  
+    right : 0px !important;  
+    bottom : 0px !important;  
+    left : 0px !important; 
+    color: white !important;
+   /* background-color: black !important;*/
+    /*  display: inline !important;*/ 
+    background-image: url("../img/fondo_negro.jpg") !important; 
+}
+
+ button {
+    box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+    border-radius: 1em !important;
+    color : yellow !important;
+    background:linear-gradient( #5f9cc5,#396b9e )  !important;
+    background:-webkit-linear-gradient( #5f9cc5,#396b9e )  !important;
+    text-align: center !important;
+   
+}
+
+.ui-content  label {
+
+  color:white !important;
+  font-size: 1.2em;
+  text-shadow: 0px 0px 15px whitesmoke !important;
+  display:inline;
+  margin-right: 2em;
+}
+
+.inline-label { 
+    white-space: nowrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float:left;     
+    }
+
+ 
+.valores {
+    float:top !important;
+    margin: 0;
+    text-align: center !important;
+    position : absolute !important; 
+}
+
+.valores span {
+    
+    font-family:font7segmentos;
+    font-size: 2.5em;
+    text-shadow: 0px 0px 20px  white !important;
+}
+
+.valores > span{
+    
+     padding-left: 0.2em;
+     padding-bottom: 4px;
+     padding-top:    4px;
+}
+
+.valores p{
+	color:orange;
+    display:inline;
+    font-size: 2em;
+    padding-right: 0.2em;
+   
+}
+
+
+#btnAbout {
+  right:0.8em;
+  top:0.5em;  
+  margin: 0 0 0 0 !important;
+  border : 0 !important;
+  background-color:black;
+  height:1.1em;
+  width:1.1em;
+}
+
+#popupAbout{
+   color:orange;
+   font-size: 1em;
+   opacity:0.95;
+   background: black;
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+    -ms-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+    box-shadow:  0px 0px 25px 10px orange;
+    /*width:10em;*/
+    text-shadow: 0px 0px 15px white;
+    
+}
+
+#popupAbout a{
+   margin:8% 15% 5% 15%;
+   color:navy;
+   text-shadow: 0px 0px 18px white;
+   background-color: gray;
+}
+
+#popupProg{
+    color:orange;
+    font-size: 1em;
+    opacity:0.95;
+    background: black;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+     -moz-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+     -ms-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+     box-shadow:  0px 0px 25px 10px orange;
+     width:10em;
+     text-shadow: 0px 0px 15px white;
+     
+ }
+
+ #popupProg a{
+    margin:8% 15% 5% 15%;
+    color:navy;
+    text-shadow: 0px 0px 18px white;
+    background-color: gray;
+ }
+
+ #popupStatus{
+    color:orange;
+    font-size: 1em;
+    opacity:0.95;
+    background: black;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+     -moz-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+     -ms-box-shadow: 10px 10px 5px 0px rgba(102,102,102,0.65);
+     box-shadow:  0px 0px 25px 10px orange;
+     width:15em;
+     text-shadow: 0px 0px 15px white;
+     
+ }
+
+ #popupStatus a{
+    margin:8% 15% 5% 15%;
+    color:navy;
+    text-shadow: 0px 0px 18px white;
+    background-color: gray;
+ }
+
+ 
+
+
+
+/*
+@media screen and (max-width : 380){
+
+    .disp_valor{
+
+        font-size: 1em;
+    }
+
+    #gaugeVolt {
+
+        width:50px;
+        height:50px;
+    }
+
+    #gaugeAmp {
+
+        width:50px;
+        height:50px;
+    }
+
+}
+*/
