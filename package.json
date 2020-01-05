@@ -4,10 +4,12 @@
   "description": "Control acuario Salon",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "12.14.0",
+    "npm": "6.13.4"
   },
   "author": "Javier Espinosa",
   "license": "ISC",

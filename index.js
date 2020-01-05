@@ -1,5 +1,7 @@
 const express = require('express');
 
+const PORT = process.env.PORT || 3030;
+
 
 // Express app
 var app = express();
@@ -13,6 +15,6 @@ app.get('/', function (req, res) {
 
 
 // Start server
-let server = app.listen(3030, () => {
+let server = app.listen(PORT, () => {
     console.log('Control Acuario Salon,puerto %d', server.address().port);
 });
