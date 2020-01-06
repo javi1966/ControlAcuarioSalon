@@ -151,6 +151,18 @@
    
 }
 
+table{
+    table-layout: fixed;
+    width: 300px;
+    margin:10px;
+}
+
+th, td {
+   
+    width: 100px;
+    word-wrap: break-word;
+}
+
 
 #btnAbout {
   right:0.8em;
