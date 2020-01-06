@@ -109,7 +109,7 @@ const app = {
         console.log("Heigth: " + app.deviceHeight / window.devicePixelRatio);
 
 
-        $('.table').css({'width':app.deviceWidth});
+        
 
         app.gaugeTemp.draw();
 
