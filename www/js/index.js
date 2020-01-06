@@ -108,6 +108,9 @@ const app = {
         console.log("Width: " + app.deviceWidth / window.devicePixelRatio);
         console.log("Heigth: " + app.deviceHeight / window.devicePixelRatio);
 
+
+        $('.table').css({'width':app.deviceWidth});
+
         app.gaugeTemp.draw();
 
         app.mideTemperatura();
