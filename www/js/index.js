@@ -338,7 +338,7 @@ const app = {
                 aux+="<tr><td>Hora:</td><td>"+data.hora+"</td></tr>";
                 aux+="<tr><td>Hora Luz:</td><td>"+data.hora_luz_1_on+"->"+data.hora_luz_1_off+"</td></tr>";
                 aux+="<tr><td>Hora Filtro:</td><td>"+data.hora_filtro_on+"->"+data.hora_filtro_off+"</td></tr>";
-                aux+="<tr><td>Hora Filtro:</td><td>"+data.hora_aire_on+"->"+data.hora_aire_off+"</td></tr>";  
+                aux+="<tr><td>Hora Aire:</td><td>"+data.hora_aire_on+"->"+data.hora_aire_off+"</td></tr>";  
 
                 console.log(aux);
 
