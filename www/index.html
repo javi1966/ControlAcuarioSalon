@@ -74,19 +74,26 @@
 
            
 
-            <div data-role="popup" id="popupProg"   data-theme="a" data-transition="slidefade" class="ui-corner-all ">
+            <div data-role="popup" id="popupProg"   data-theme="a" data-transition="slidefade" class="ui-corner-all ui-theme-b">
 
                 <div data-role="header" style="margin-left:1%;margin-right:1%;margin-top:1%;"
-                    class="ui-corner-all ui-shadow-inset">
-                    <h1 style="text-align:center;color:black;">Prog.</h1>
+                    class="ui-corner-all ui-shadow-inset ui-header-fixed ">
+                    <h2 style="text-align: left ">Programacion</h2>
                 </div>
+                <br><br>
+
+                <table>
+
+                    <tr>
+                        <td><h3>Hora ON:</h3></td><td><input id="iHoraOn"   type="number"  required autofocus value="" class="validated"></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Hora OFF:</h3></td><td><input id="iHoraOff"  type="number"  required autofocus value="" class="validated">
+                        </td>
+                    </tr>
+                </table>
           
-                <label for="iHoraOn">Hora ON:</label>
-                <input id="iHoraOn"   type="number"  min="0" max="23" step="1" value="">
-                
-                <label for="iHoraOff" >Hora OFF:</label>
-                <input id="iHoraOff"  type="number"   min="0" max="23" step="1" value="">
-            
+              
                 <a href="" id="popOK" class="ui-btn ui-btn-corner-all ui-shadow-inset">OK</a>
                 
                 <a href="#" data-rel="back" class="ui-btn ui-btn-corner-all ui-shadow-inset">Cancelar</a>

@@ -269,6 +269,13 @@ const app = {
 
         horai = $('#iHoraOn').val();
         horaf = $('#iHoraOff').val();
+        console.log(horai+","+horaf);
+
+        if(horai === "" || horaf ===""){
+
+            toast("Falta Indicacion Hora");
+            return;
+        }
 
         switch (app.idPop) {
 
