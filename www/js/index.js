@@ -109,7 +109,7 @@ const app = {
         console.log("Heigth: " + app.deviceHeight / window.devicePixelRatio);
 
 
-        
+        $("#btnCalentador").prop('disabled', true);
 
         app.gaugeTemp.draw();
 
