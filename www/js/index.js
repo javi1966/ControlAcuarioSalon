@@ -97,6 +97,7 @@ const app = {
         btnAbout.onclick = app.about;
         popOK.onclick = app.enviaProg;
         btnStatus.onclick=app.estado;
+        btnReset.onclick=app.reset;
 
         console.log("log:bindEvents" + localStorage.getItem('ReleLuz40'));
     },
@@ -361,6 +362,21 @@ const app = {
                 alert("Error: " + error.responseText);
             });
 
+
+    },
+
+    reset : function () {
+        $.get("http://192.168.1.220/reset")
+        .done( (data) => {
+
+            toast("Reset");
+           
+            console.log(data);
+            
+        })
+        .fail( (error) => {
+            alert("Error: " + error.responseText);
+        });
 
     },
 
