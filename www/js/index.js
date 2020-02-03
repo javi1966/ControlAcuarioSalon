@@ -96,8 +96,8 @@ const app = {
         btnCalentador.onclick = app.ControlReles;
         btnAbout.onclick = app.about;
         popOK.onclick = app.enviaProg;
-        btnStatus.onclick=app.estado;
-        btnReset.onclick=app.reset;
+        btnStatus.onclick = app.estado;
+        // btnReset.onclick=app.reset;
 
         console.log("log:bindEvents" + localStorage.getItem('ReleLuz40'));
     },
@@ -135,11 +135,17 @@ const app = {
         console.log("onDeviceReady");
     },
 
-    mideTemperatura: function () {
+    mideTemperatura:  () => {
 
-        $.get("http://192.168.1.220/temp", (data) => { app.gaugeTemp.setValue(data.temperatura) });
+        console.log("Comienza Medida Temperatura");
 
-        console.log("Mide Temperatura");
+        $.get("/temp", (data) => {
+            app.gaugeTemp.setValue(data.temperatura);
+            console.log("Mide Temperatura " + data.temperatura);
+ 
+        });
+
+
     },
 
 
@@ -157,7 +163,7 @@ const app = {
 
                 bBtnLuz = !bBtnLuz;
 
-                $.get(bBtnLuz ? "http://192.168.1.220/luzon" : "http://192.168.1.220/luzoff")
+                $.get(bBtnLuz ? "/luzon" : "/luzoff")
 
                     .done((data) => {
                         // function (data,status) {
@@ -209,7 +215,7 @@ const app = {
 
                 bBtnAire = !bBtnAire;
 
-                $.get(bBtnAire ? "http://192.168.1.220/aireon" : "http://192.168.1.220/aireoff")
+                $.get(bBtnAire ? "/aireon" : "/aireoff")
 
                     .done((data) => {
 
@@ -270,9 +276,9 @@ const app = {
 
         horai = $('#iHoraOn').val();
         horaf = $('#iHoraOff').val();
-        console.log(horai+","+horaf);
+        console.log(horai + "," + horaf);
 
-        if(horai === "" || horaf ===""){
+        if (horai === "" || horaf === "") {
 
             toast("Falta Indicacion Hora");
             return;
@@ -334,49 +340,49 @@ const app = {
         }
     },
 
-    estado:  () => {
+    estado: () => {
 
-        let aux="";
+        let aux = "";
 
-        $.get("http://192.168.1.220/status")
+        $.get("/status")
 
 
-            .done( (data) => {
+            .done((data) => {
 
                 $('#popupStatus').popup('open');
 
-                aux="<tr><td>Temperatura:</td><td>"+data.temperatura+"</td></tr>";
-                aux+="<tr><td>Hora:</td><td>"+data.hora+"</td></tr>";
-                aux+="<tr><td>Hora Luz:</td><td>"+data.hora_luz_1_on+"->"+data.hora_luz_1_off+"</td></tr>";
-                aux+="<tr><td>Hora Filtro:</td><td>"+data.hora_filtro_on+"->"+data.hora_filtro_off+"</td></tr>";
-                aux+="<tr><td>Hora Aire:</td><td>"+data.hora_aire_on+"->"+data.hora_aire_off+"</td></tr>";  
+                aux = "<tr><td>Temperatura:</td><td>" + data.temperatura + "</td></tr>";
+                aux += "<tr><td>Hora:</td><td>" + data.hora + "</td></tr>";
+                aux += "<tr><td>Hora Luz:</td><td>" + data.hora_luz_1_on + "->" + data.hora_luz_1_off + "</td></tr>";
+                aux += "<tr><td>Hora Filtro:</td><td>" + data.hora_filtro_on + "->" + data.hora_filtro_off + "</td></tr>";
+                aux += "<tr><td>Hora Aire:</td><td>" + data.hora_aire_on + "->" + data.hora_aire_off + "</td></tr>";
 
                 console.log(aux);
 
                 $('#tblStatus').html(aux);
 
                 console.log(data);
-                
+
             })
-            .fail( (error) => {
+            .fail((error) => {
                 alert("Error: " + error.responseText);
             });
 
 
     },
 
-    reset : function () {
+    reset: function () {
         $.get("http://192.168.1.220/reset")
-        .done( (data) => {
+            .done((data) => {
 
-            toast("Reset");
-           
-            console.log(data);
-            
-        })
-        .fail( (error) => {
-            alert("Error: " + error.responseText);
-        });
+                toast("Reset");
+
+                console.log(data);
+
+            })
+            .fail((error) => {
+                alert("Error: " + error.responseText);
+            });
 
     },
 
