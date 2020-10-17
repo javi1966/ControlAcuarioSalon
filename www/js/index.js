@@ -93,7 +93,7 @@ const app = {
         btnProgFiltro.onclick = app.Programador;
         btnAire.onclick = app.ControlReles;
         btnProgAire.onclick = app.Programador;
-        btnCalentador.onclick = app.ControlReles;
+        //btnCalentador.onclick = app.ControlReles;
         btnAbout.onclick = app.about;
         popOK.onclick = app.enviaProg;
         btnStatus.onclick = app.estado;
@@ -219,7 +219,7 @@ const app = {
 
                     .done((data) => {
 
-                        toast("Aire " + data.aireador);
+                        toast("Calentador " + data.aireador);
                         console.log(data);
                     })
                     .fail((error) => {
