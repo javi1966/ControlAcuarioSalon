@@ -29,7 +29,7 @@ const toast = function (msg) {
 let bBtnLuz = false;
 let bBtnFiltro = false;
 let bBtnCalentador = false;
-let bBtnAire = false;
+let bBtnAux = false;
 
 
 const app = {
@@ -91,9 +91,9 @@ const app = {
         btnProgLuz.onclick = app.Programador;
         btnFiltro.onclick = app.ControlReles;
         btnProgFiltro.onclick = app.Programador;
-        btnAire.onclick = app.ControlReles;
-        btnProgAire.onclick = app.Programador;
-        //btnCalentador.onclick = app.ControlReles;
+        btnAux.onclick = app.ControlReles;
+        btnProgAux.onclick = app.Programador;
+        btnCalentador.onclick = app.ControlReles;
         btnAbout.onclick = app.about;
         popOK.onclick = app.enviaProg;
         btnStatus.onclick = app.estado;
@@ -110,7 +110,7 @@ const app = {
         console.log("Heigth: " + app.deviceHeight / window.devicePixelRatio);
 
 
-        $("#btnCalentador").prop('disabled', true);
+       
 
         app.gaugeTemp.draw();
 
@@ -144,7 +144,6 @@ const app = {
             console.log("Mide Temperatura " + data.temperatura);
  
         });
-
 
     },
 
@@ -199,7 +198,7 @@ const app = {
 
                 bBtnCalentador = !bBtnCalentador;
 
-                $.get(bBtnCalentador ? "http://192.168.1.220/calentadoroff" : "http://192.168.1.220/calentadoron")
+                $.get(bBtnCalentador ? "/calentadoron" : "/calentadoroff")
                     .done((data) => {
 
                         toast("Calentador " + data.calentador);
@@ -211,15 +210,15 @@ const app = {
 
                 break;
 
-            case "btnAire":
+            case "btnAux":
 
-                bBtnAire = !bBtnAire;
+                bBtnAux = !bBtnAux;
 
-                $.get(bBtnAire ? "/aireon" : "/aireoff")
+                $.get(bBtnAux ? "/auxon" : "/auxoff")
 
                     .done((data) => {
 
-                        toast("Calentador " + data.aireador);
+                        toast("Aux" + data.aux);
                         console.log(data);
                     })
                     .fail((error) => {
@@ -245,7 +244,8 @@ const app = {
 
         switch (id) {
 
-            case "btnProgLuz": $('#popupProg').popup('open');
+            case "btnProgLuz": 
+                $('#popupProg').popup('open');
                 app.idPop = 1;
 
                 console.log("popupProg btnProgLuz");
@@ -255,10 +255,10 @@ const app = {
                 app.idPop = 2;
                 console.log("popupProg btnProgFiltro");
                 break;
-            case "btnProgAire":
+            case "btnProgAux":
                 $('#popupProg').popup('open');
                 app.idPop = 3;
-                console.log("popupProg btnProgAire");
+                console.log("popupProg btnProgAux");
                 break;
 
 
@@ -321,11 +321,11 @@ const app = {
                 break;
 
             case 3:
-                $.get("http://192.168.1.220/horaire?horai=" + horai + "&horaf=" + horaf)
+                $.get("http://192.168.1.220/horaux?horai=" + horai + "&horaf=" + horaf)
 
                     .done((data) => {
 
-                        toast("Hora Aire " + data.hora_aire_on + "->" + data.hora_aire_off);
+                        toast("Hora Aux " + data.hora_aux_on + "->" + data.hora_aux_off);
                         console.log(data);
                     })
                     .fail((error) => {
@@ -333,7 +333,7 @@ const app = {
                     });
 
 
-                console.log("Aire Horai: %s,Horaf :%s", horai, horaf);
+                console.log("Aux Horai: %s,Horaf :%s", horai, horaf);
                 break;
 
             default: break;
@@ -355,7 +355,7 @@ const app = {
                 aux += "<tr><td>Hora:</td><td>" + data.hora + "</td></tr>";
                 aux += "<tr><td>Hora Luz:</td><td>" + data.hora_luz_1_on + "->" + data.hora_luz_1_off + "</td></tr>";
                 aux += "<tr><td>Hora Filtro:</td><td>" + data.hora_filtro_on + "->" + data.hora_filtro_off + "</td></tr>";
-                aux += "<tr><td>Hora Aire:</td><td>" + data.hora_aire_on + "->" + data.hora_aire_off + "</td></tr>";
+                aux += "<tr><td>Hora Aux:</td><td>" + data.hora_aux_on + "->" + data.hora_aux_off + "</td></tr>";
 
                 console.log(aux);
 

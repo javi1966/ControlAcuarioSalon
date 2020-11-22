@@ -52,9 +52,9 @@ app.get('/luzoff',async (req,res) => {
 
 });
 
-app.get('/aireon',async (req,res) => {
+app.get('/auxon',async (req,res) => {
 
-    let stat= await axios.get('http://192.168.1.220/aireon');
+    let stat= await axios.get('http://192.168.1.220/auxon');
 
     console.log(stat.data);
 
@@ -62,9 +62,30 @@ app.get('/aireon',async (req,res) => {
 
 });
 
-app.get('/aireoff',async (req,res) => {
+app.get('/auxoff',async (req,res) => {
 
-    let stat= await axios.get('http://192.168.1.220/aireoff');
+    let stat= await axios.get('http://192.168.1.220/auxoff');
+
+    console.log(stat.data);
+
+    res.json(stat.data);
+
+});
+
+
+app.get('/calentadoron',async (req,res) => {
+
+    let stat= await axios.get('http://192.168.1.220/calentadoron');
+
+    console.log(stat.data);
+
+    res.json(stat.data);
+
+});
+
+app.get('/calentadoroff',async (req,res) => {
+
+    let stat= await axios.get('http://192.168.1.220/calentadoroff');
 
     console.log(stat.data);
 
